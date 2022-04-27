@@ -43,7 +43,7 @@ function Card(props){
         {
             movie.map((obj)=>{
                         return(
-                            <img onClick={()=>getId(obj.id)} className='poster' src={movie ? `${img_url+obj.backdrop_path}  ` : "" }  />
+                            <img onClick={()=>getId(obj.id)} className={props.small ?  'smallposter' : 'poster' } src={movie ? `${img_url+obj.backdrop_path}  ` : "" }  />
                         )
             })
         }

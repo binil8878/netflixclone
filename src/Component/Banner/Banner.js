@@ -18,7 +18,16 @@ function Banner() {
     axios.get(`/trending/all/day?api_key=${API_KEY}`).then((Response)=>{
       console.log(Response.data.results[0])
      setMovie(Response.data.results[1]) 
+     var i=0;
+     setInterval(function () {
+       setMovie(Response.data.results[i])
+       i++;
+       if(i==10){
+         i=0;
+       }
+     }, 6000);
     }) 
+
   
   }, [])
   const getMovie=(id)=>{
